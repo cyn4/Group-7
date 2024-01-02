@@ -5,7 +5,7 @@ import os
 # load .env file
 load_dotenv()
 #Get the Google Maps API key from the environment variables
-google_maps_api_key = os.getenv('Google_API_KEY')
+google_maps_api_key = os.getenv('google_maps_api_key')
 
 def get_location_coordinates(place):
     """
