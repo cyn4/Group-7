@@ -1,5 +1,12 @@
 import requests
+from dotenv import load_dotenv
+import os
 
+# Load environment variables from .env file
+load_dotenv()
+
+# Access an environment variable
+google_maps_api_key = os.getenv('google_maps_api_key')
 def get_nearby_places(location, search, user_rating, number_of_output):
     """
     Function to get nearby places using Google Places API.
@@ -11,7 +18,7 @@ def get_nearby_places(location, search, user_rating, number_of_output):
     
     :return: List of nearby places based on the provided filters.
     """
-    google_maps_api_key = 'AIzaSyCqXq0BqIAIojo2IGJKkivABWFNM0fUCYA'
+    
     
     # Build the API URL with the provided parameters
     url = f'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location={location}&radius=1500&type={search}&key={google_maps_api_key}'
