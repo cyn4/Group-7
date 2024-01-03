@@ -1,3 +1,4 @@
+import requests
 def get_location_coordinates(place):
     """
     Accesses the Google Maps API and returns the coordinates of a place.
