@@ -1,4 +1,4 @@
-from functions import get_location_coordinates, get_nearby_places, get_user_input, weather_check, direction, \
+from functions import get_location_coordinates, display_places, get_nearby_places, get_user_input, weather_check, direction, \
     clear_console
 from travel_guide_logo import logo, greeting  # Importing specific art elements for visual display
 if __name__ == "__main__":
@@ -15,7 +15,7 @@ if __name__ == "__main__":
             print(weather_check(user_city, user_country))
             # Getting and displaying nearby places based on user's input
             nearby_places = get_nearby_places(location, search, user_rating, number_of_output)
-            #display_nearby_places(nearby_places) -remember to add display_nearby places function then uncomment this line
+            display_places(nearby_places)
 
         travel = input("🧭 Will you like navigation service\n Type Yes or No: ").lower()  # Asking if the user wants navigation service
         if travel == 'yes':

@@ -186,7 +186,7 @@ def get_user_input():
 
     # Converting user_rating to int if it's not "any"
     if user_rating != "any":
-        user_rating = int(number_of_output)
+        user_rating = int(user_rating)
 
     return user_city, user_country, search, user_rating, number_of_output  # Returning multiple values as a tuple
 
