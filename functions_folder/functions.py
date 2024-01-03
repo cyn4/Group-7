@@ -264,7 +264,7 @@ def display_places(places):
     else:
         print("Search not found")
      
-     
+
 def get_location_coordinates(place):
     """
     Accesses the Google Maps API and returns the coordinates of a place.
