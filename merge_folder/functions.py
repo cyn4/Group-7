@@ -37,6 +37,7 @@ import os
 load_dotenv()
 #Get the Google Maps API key from the environment variables
 google_maps_api_key = os.getenv('google_maps_api_key')
+weather_api_key = os.getenv('weather_api_key')
 
 def weather_check(user_city, user_country):
     """
@@ -49,13 +50,12 @@ def weather_check(user_city, user_country):
     Returns:
     - str: Weather information based on the user's location.
     """
-    api_key = 'c2fa876f2dbb08159882309066d54252'
     endpoint = 'http://api.openweathermap.org/data/2.5/weather'
     user_location = f"{user_city},{user_country}"
     payload = {
         'q': user_location,
         'unit': 'metrics',
-        'appid': api_key
+        'appid': weather_api_key
     }  # The parameters to be based to the get method
     response = requests.get(url=endpoint, params=payload)
     data = response.json()
