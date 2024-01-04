@@ -1,4 +1,4 @@
-def display_nearby_places(places):
+def display_places(places):
     """
     Displays a list of places, ratings, and addresses based on the provided data.
 
@@ -10,7 +10,7 @@ def display_nearby_places(places):
     """
 
     if places:
-        print("Nearby Places:")
+        print("Places:")
 
         # Open a text file to store the search results
         with open('user_search.txt', 'a') as text_file:  # 'a' mode for appending
