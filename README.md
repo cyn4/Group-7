@@ -1,38 +1,54 @@
-# ExploreWayz Console App
+# Explorewayz
 
-## Overview
-
-
-## Objectives
-### Empowering Different Audiences
-The app caters to two key user groups:
-- **For Tourists:** Facilitating exploration, weather updates, and recommendations for discovering new places.
-- **For Locals:** Providing insights into hidden gems, local events, and lesser-known attractions.
+Explorewayz is a Python application designed to facilitate efficient trip planning by providing users with a unified solution for location information, real-time weather updates, and recommendations for places like restaurants. The application leverages various APIs such as Google Maps and OpenWeatherMap to offer users a seamless experience in exploring and adapting to new locations effortlessly.
 
 ## Features
 
-### For Tourists
-- **Location Navigation:** Console-based navigation and exploration of new or unfamiliar locations.
-- **Real-time Weather Updates:** Fetching and displaying up-to-date weather forecasts for travel planning.
-- **Tailored Recommendations:** Suggestions for must-visit places and tourist attractions.
+- **Location Coordinates Retrieval:** Utilizes the Google Maps API to retrieve the coordinates (latitude and longitude) of a specific place.
+- **Logging Coordinates:** Logs the coordinates of a place to a text file for future reference.
+- **Discover Nearby Places:** Fetches nearby places based on user-input coordinates, search query, user rating preference, and number of results.
+- **Display Nearby Places:** Presents a list of nearby places along with their ratings and addresses.
+- **Weather Check:** Provides weather information for a given city and country, offering insights into the current weather conditions.
+- **Directions and Navigation:** Offers directions between two locations based on user input, utilizing the Google Maps Directions API.
+- **User Interaction:** Engages users through interactive prompts for discovering new places and navigation services.
 
-### For Locals
-- **Discover Local Gems:** Recommendations for lesser-known spots, events, and activities within your area.
-- **Local Events & Seasonal Highlights:** Insights into upcoming local events, festivals, and seasonal attractions.
+## Dependencies
+
+- Python
+- Requests library: For making HTTP requests to web servers or APIs.
+- BeautifulSoup library: For HTML parsing and navigating HTML/XML documents.
+- dotenv library: For loading environment variables from a .env file.
+- os module: For clearing the console
+
+## Getting Started
+
+1. Download the Explorewayz documentation zip file, extract the file upon download, and open the index HTML in the build folder.
+2. Clone the repository or download the codes in the merged folder.
+3. Ensure Python is installed on your machine.
+4. Install the required dependencies by running.
+5. Set up necessary API keys:
+    - Obtain a Google Maps API key and OpenWeatherMap API key.
+    - Create a `.env` file and store these keys:
+        ```
+        GOOGLE_MAPS_API_KEY_PLACES=your_google_maps_api_key
+        GOOGLE_MAPS_API_COORDINATES=your_google_maps_api_key
+        WEATHER_API_KEY=your_openweathermap_api_key
+        ```
+6. Run the main script `main.py`.
+7. Follow the on-screen prompts to explore places or utilize navigation services.
+
 
 ## Usage
-1. **For Tourists:** Run the app, input a destination, and explore suggested spots to plan your trip effectively.
-2. **For Locals:** Discover hidden gems, explore local events, and find interesting places within your vicinity.
 
-## APIs Used
-- **Map API:** Google map APIs i.e Directions and Places APIs
-- **Weather API:** Open Weather API
+- Upon running the application, users are prompted to choose between discovering places or navigation services.
+- For discovering places, users can input a city, country, search query, user rating preference, and number of results to display.
+- Navigation services offer directions between two locations and the option to explore places in the destination.
 
-## Contributing
-Contributions are welcome! Feel free to suggest enhancements or report bugs by opening an issue or creating a pull request following our contribution guidelines.
+## Contributors
 
-## License
-This project is licensed under the [MIT License](link-to-license-file).
+- Oluwatobi
+- Kafayat
+- Cynthia
+- Aishat
+- Zione
 
-## Contact
-For inquiries, feedback, or support, please reach out to our team at [email@example.com](mailto:email@example.com).
