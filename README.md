@@ -16,9 +16,9 @@ Explorewayz is a Python application designed to facilitate efficient trip planni
 
 - Python
 - Requests library: For making HTTP requests to web servers or APIs.
-- BeautifulSoup library: For HTML parsing and navigating HTML/XML documents.
+- BeautifulSoup library: For HTML parsing and cleaning up HTML/XML documents.
 - dotenv library: For loading environment variables from a .env file.
-- os module: For clearing the console
+- os module: For interacting with the operating system
 
 ## Getting Started
 
