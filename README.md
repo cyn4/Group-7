@@ -47,7 +47,7 @@ Explorewayz is a Python application designed to facilitate efficient trip planni
 
 
 ## Output
-![Welcome_page](Images/Welcomepage.png) <img src="Images/Welcomepage.png" width="800" height="600">
+![Welcome_page](Images/Welcomepage.png) <img src="Images/Welcomepage.png" width="300" height="100">
 ![Explore_places](Images/Exploreplaces.png) ![Navigation_Services](Images/Navigation.png)
 
 ## Flow Charts
