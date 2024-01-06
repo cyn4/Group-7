@@ -52,13 +52,12 @@ Explorewayz is a Python application designed to facilitate efficient trip planni
 
 ## Flow Charts
 ### App Flow Chart
-<img width="7472" alt="Flow charts" src="https://github.com/cyn4/Group-7/assets/131699315/205385e1-1584-4fc7-8a91-2faae5dac2b2">
+![App Flow Chart](images/Flow charts_app.png)
 
 
 ### Code Structure
 
-<img width="3968" alt="Flow charts (1)" src="https://github.com/cyn4/Group-7/assets/131699315/ba5cfcf9-4a87-4710-b2cd-d741041c0329">
-
+![Code Structure flow chart](images/codeStructure_Flowchart)
 
 
 
