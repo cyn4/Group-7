@@ -33,11 +33,13 @@ from bs4 import BeautifulSoup
 from dotenv import load_dotenv
 import os  
 
+
 # load .env file
 load_dotenv()
 #Get the Google Maps API key from the environment variables
-google_maps_api_key = os.getenv('google_maps_api_key')
-weather_api_key = os.getenv('weather_api_key')
+google_maps_api_key = os.getenv('GOOGLE_MAPS_API_KEY_PLACES')
+google_maps_api_key = os.getenv('GOOGLE_MAPS_API_COORDINATES')
+weather_api_key = os.getenv('WEATHER_API_KEY')
 
 def weather_check(user_city, user_country):
     """
@@ -50,6 +52,7 @@ def weather_check(user_city, user_country):
     Returns:
     - str: Weather information based on the user's location.
     """
+    weather_api_key = os.getenv("WEATHER_API_KEY")
     endpoint = 'http://api.openweathermap.org/data/2.5/weather'
     user_location = f"{user_city},{user_country}"
     payload = {
@@ -63,19 +66,19 @@ def weather_check(user_city, user_country):
         conversion = round(
             data['main']['feels_like'] - 273.15)  # This covert the temperature to degree
         if conversion >= 35:  # The 'if' block print a feedback based on the temparature of the user's location
-            return (f"The weather is: {conversion}\n🌞 It is sunny in {user_city},Pack a screen 🍶 or pack an Umbrella "
+            return (f"The weather is: {conversion}°\n🌞 It is sunny in {user_city}, pack a sun screen 🍶 or pack a "
+                    f"Umbrella"
                     f"☂️\n")
         elif conversion >= 20:
-            return f"🌥️ The weather is: {conversion}\nNice weather in {user_city}\n "
+            return f"🌥️ The weather is: {conversion}°\nNice weather in {user_city}, let you hair out💃🏻 "
         if conversion <= 19:
-            return f"☃️ The weather is: {conversion}\nIt is very cold in {user_city}\n Pack a sweater 🧥 and Gloves🧤\n"
+            return f"☃️ 🥶 The weather is: {conversion}°\nIt is very cold in {user_city} pack a sweater 🧥 and Gloves🧤\n"
     except KeyError as e:
         print("Invalid city or country")
         return None
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
         return None  # End of the try statement
-
 
 def direction():
     """
@@ -132,6 +135,7 @@ def direction():
         print(
             f"An unexpected error occurred: {e}. Try providing location and destination with specific city and country")
         return None  # End of the try statement
+    
 def get_location_coordinates(place):
     """
     This function accesses the Google Maps API and returns the coordinate of a place.
@@ -207,8 +211,6 @@ def get_nearby_places(location, search, user_rating, number_of_output):
         print(f"An unexpected error occurred: {e}")
         return None
     
-
-
 def get_user_input(): 
     """
     Function to collect user inputs regarding city, country, search query, user rating preference, and number of results to display.
@@ -229,29 +231,24 @@ def get_user_input():
     return user_city, user_country, search, user_rating, number_of_output  # Returning multiple values as a tuple
 
 
-def display_places(places):
+def display_nearby_places(places):  
     """
     Displays a list of places, ratings, and addresses based on the provided data.
 
     Args:
-        places (list): List of places with details.
+    - places (list): List of places with details.
 
     Returns:
-        None
+    - None
     """
-
     if places:
-        print("Nearby Places:")
-
-        # Open a text file to store the search results
-        with open('user_search.txt', 'a') as text_file:  # 'a' mode for appending
+        print("\nNearby Places:")
+        with open('user_search.txt', 'w', encoding='utf-8') as text_file:
             for idx, place in enumerate(places, start=1):
-                # Write the place information to the text file
                 text_file.write(f"{idx}. {place['name']}\n")
                 text_file.write(f"Rating: {place.get('rating', 'Not rated')}\n")
-                text_file.write(f"Address: {place.get('vicinity', 'Address not available')}\n\n")
-
-                # Print the same content to the console
+                text_file.write(f"Address: {place.get('vicinity', 'Address not available')}\n\n") #places are extracted into a text file
+                # Printing the same content to the console
                 print(f"{idx}. {place['name']}")
                 print("Rating:", place.get('rating', 'Not rated'))
                 print("Address:", place.get('vicinity', 'Address not available'))
@@ -267,6 +264,122 @@ def clear_console():
     os.system('cls' if os.name == 'nt' else 'clear')
 
 
+
+
+def discover_more_places(): #Aishat
+    print(places)
+    user_city, user_country, search, user_rating, number_of_output = get_user_input()
+    place = user_city, user_country
+    location = get_location_coordinates(place)  # Getting coordinates for the user's location
+    # Displaying weather information for the user's location
+    print(weather_check(user_city, user_country))
+    # Getting and displaying nearby places based on user's input
+    nearby_places = get_nearby_places(location, search, user_rating, number_of_output)
+    return display_nearby_places(nearby_places)
+
+
+def discover_places_service():
+    """
+    Function to handle discovering places based on user input.
+
+    This function asks the user if they want to discover other places and continues the discovery process
+    until the user decides not to discover more.
+
+    Returns:
+    - None
+    """
+    discover = True
+    while discover:
+        clear_console()
+        discover_more_places()
+        is_more_places = input("Will you like to discover other places ( Type yes or No):  ").lower()
+        if is_more_places == "yes":
+            clear_console()
+        elif is_more_places == "no":
+            break
+
+
+def push_navigation_services(): 
+    """
+    Function to prompt the user about exploring the navigation service.
+
+    Returns:
+    - str: User's choice ('Yes' or 'No')
+    """
+    navigation_push = input("Hey🙋🏻‍♀️! before you go, will you love to check out our Navigation "
+                            "service.\n Type Yes or No: ").lower()
+    return navigation_push
+
+
+def more_navigation_service(): 
+    """
+    Function to ask the user if they want navigation services for other destinations.
+
+    Returns:
+    - str: User's choice ('Yes' or 'No')
+    """
+    more_navigation = input("\nDo you want navigation services for other destinations.\nType Yes or No: ").lower()
+    return more_navigation
+
+
+def navigation_services(): 
+    """
+    Function to orchestrate the navigation service.
+
+    This function manages the navigation service by asking users if they want to discover new places in a destination.
+    It also runs the directions functions.
+    It gathers user preferences like the type of place to search for, the rating preference, and the number of results
+    to display. It uses these preferences to fetch and display nearby places.
+
+    Returns:
+    - None
+    """
+    navigation = True
+    while navigation:
+        clear_console()
+        print(navigation_art)
+        destination_country, destination_city = direction()
+        activate_place_discovery_push = True
+        while activate_place_discovery_push:
+            push_place_discovery_service = input(
+                "\nDo you want to discover new or more places in this destination?\n Type Yes or "
+                "No: ").lower()
+            if push_place_discovery_service == "yes":
+                clear_console()
+                print(places)
+                place = destination_city, destination_country
+                location = get_location_coordinates(place)
+                search = input(
+                    "🔍 What are you searching for (e.g Hospital): ").lower()  # Prompting for the type of place to
+                # search
+                user_rating = input(
+                    "💬 What rating do you want?.\n(Type any if you want all ratings, otherwise give a number between ("
+                    "1-4) : ").lower()  # Prompting
+                # for the user's rating preference
+                number_of_output = int(
+                    input("How many of your search results do you want to see: "))  # Prompting for the number
+                # of results to display
+
+                # Converting user_rating to int if it's not "any"
+                if user_rating != "any":
+                    user_rating = float(user_rating)
+                nearby_places = get_nearby_places(location, search, user_rating, number_of_output)
+                display_nearby_places(nearby_places)
+            elif push_place_discovery_service == "no":
+                break
+        if more_navigation_service() == "no":
+            break
+
+
+# def app_exit(): 
+#     """
+#     Function to ask the user if they want to exit the app.
+
+#     Returns:
+#     - str: User's choice ('Yes' or 'No')
+#     """
+#     exit = input("Do you want to exit app. Type Yes or No:  ").lower()
+#     return exit
 
 
 
