@@ -46,7 +46,7 @@ Explorewayz is a Python application designed to facilitate efficient trip planni
 - Navigation services offer directions between two locations and the option to explore places in the destination.
 
 
-## Output
+## Example
 <img src="Images/Welcomepage.png" width="600" height="400"> <img src="Images/Exploreplaces.png" width="600" height="400"> <img src="Images/Navigation.png" width="600" height="400">
 
 
