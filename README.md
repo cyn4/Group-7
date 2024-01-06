@@ -1,6 +1,6 @@
 # Explorewayz
 
-Explorewayz is a Python application designed to facilitate efficient trip planning by providing users with a unified solution for location information, real-time weather updates, and recommendations for places like restaurants. The application leverages various APIs such as Google Maps and OpenWeatherMap to offer users a seamless experience in exploring and adapting to new locations effortlessly.
+Explorewayz is a Python application designed to facilitate efficient trip planning by providing users with a unified solution for location information, real-time weather updates, and recommendations for places like restaurants. The application leverages APIs such as Google Maps and OpenWeatherMap to offer users a seamless experience in exploring and adapting to new locations effortlessly.
 
 ## Features
 
