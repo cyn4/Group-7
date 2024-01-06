@@ -45,11 +45,11 @@ Explorewayz is a Python application designed to facilitate efficient trip planni
 - For discovering places, users can input a city, country, search query, user rating preference, and number of results to display.
 - Navigation services offer directions between two locations and the option to explore places in the destination.
 
-![Welcome_page](images/Welcome.png)
-![Explore_places](images/Exploreplaces.png)
-![Navigation_Services](images/Navigation.png)
-![App_flow_chart](images/appFlowchart.png)
-![Code_structure_flow_chart](images/codeStructure_Flowchart.png)
+![Welcome_page](Images/Welcomepage.png)
+![Explore_places](Images/Exploreplaces.png)
+![Navigation_Services](Images/Navigation.png)
+![App_flow_chart](Images/appFlowchart.png)
+![Code_structure_flow_chart](Images/codeStructure_Flowchart.png)
 
 
 
