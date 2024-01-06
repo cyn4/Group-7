@@ -1,4 +1,4 @@
-# Explorewayz
+![Flow charts](https://github.com/cyn4/Group-7/assets/131699315/40fa88a4-29b1-41f6-9016-000791614414)# Explorewayz
 
 Explorewayz is a Python application designed to facilitate efficient trip planning by providing users with a unified solution for location information, real-time weather updates, and recommendations for places like restaurants. The application leverages various APIs such as Google Maps and OpenWeatherMap to offer users a seamless experience in exploring and adapting to new locations effortlessly.
 
@@ -52,7 +52,8 @@ Explorewayz is a Python application designed to facilitate efficient trip planni
 
 ## Flow Charts
 ### App Flow Chart
-![App_flow_chart](Images/Flow charts_JPG.jpg)
+![Flow charts](https://github.com/cyn4/Group-7/assets/131699315/594dfb7d-5d73-4235-aadb-1382c3461db3)
+
 
 ### Code Structure
 ![Code_structure_flow_chart](Images/codeStructure_Flowchart.png)
