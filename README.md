@@ -35,7 +35,8 @@ Explorewayz is a Python application designed to facilitate efficient trip planni
         WEATHER_API_KEY=your_openweathermap_api_key
         ```
 6. Run the main script `main.py`.
-7. Follow the on-screen prompts to explore places or utilize navigation services.
+7. Ensure the `function.py` file is loaded whilst running the `main.py`
+8. Follow the on-screen prompts to explore places or utilize navigation services.
 
 
 ## Usage
