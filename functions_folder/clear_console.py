@@ -1,4 +1,4 @@
-def clear_console():  # Tobi
+def clear_console():  
     """
     Clears the console screen.
 

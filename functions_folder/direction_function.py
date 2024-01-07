@@ -1,4 +1,4 @@
-def direction(): #Tobi
+def direction(): 
     """
     Provides directions between two locations based on user input.
 
