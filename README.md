@@ -25,7 +25,7 @@ ExploreWayz is a Python application designed to facilitate efficient trip planni
 1. Download the Explorewayz documentation zip file, extract the file upon download, and open the index HTML in the build folder.
 2. Clone the repository or download the codes in the merged folder.
 3. Ensure Python is installed on your machine.
-4. Install the required dependencies by running.
+4. Install the required dependencies using the pip install -r requirements.txt or pip3 install -r requirements.txt depending on your IDE
 5. Set up necessary API keys:
     - Obtain a Google Maps API key and OpenWeatherMap API key.
     - Create a `.env` file and store these keys:
