@@ -199,17 +199,24 @@ def get_nearby_places(location, search, user_rating, number_of_output):
             places_data = response.json()
             if user_rating == "any":
                 return places_data['results'][:number_of_output]
-            elif places_data['results'][0]['rating'] >= user_rating:
-                return places_data['results'][:number_of_output]
+        #     elif places_data['results'][0]['rating'] >= user_rating:
+        #         return places_data['results'][:number_of_output]
+            else:
+                filtered_places = [
+                    place for place in places_data['results'] if
+                    'rating' in place and place.get('rating', 0) >= user_rating
+                ]  # Due to the nature of the json file we are using a list comprehension to carry out the filtration
+                return filtered_places[:number_of_output]
         else:
             print("Failed to fetch nearby places.")
             return None
-    except KeyError as e:
-        print("Invalid city / country or search")
+    except KeyError:
+        print("Invalid city / country or search.")
         return None
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
         return None
+
     
 def get_user_input(): 
     """
@@ -371,14 +378,14 @@ def navigation_services():
             break
 
 
- def app_exit(): 
-     """
+def app_exit(): 
+    """
     Function to ask the user if they want to exit the app.
 
-     Returns:
-     - str: User's choice ('Yes' or 'No')
-     """
-     exit = input("Do you want to exit app. Type Yes or No:  ").lower()
+    Returns:
+    - str: User's choice ('Yes' or 'No')
+    """
+    exit = input("Do you want to exit app. Type Yes or No:  ").lower()
     return exit
 
 
