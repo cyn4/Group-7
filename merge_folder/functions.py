@@ -87,8 +87,11 @@ def direction():
     Returns:
     - None
     """
-    origin = input("🏨 Where is your intended location: ").lower()
-    destination = input("🚘 Where will you like to visit: ").lower()
+   
+    destination_country = input("What country is the destination?: ").lower()
+    destination_city = input("What city is the destination?: ").lower()
+    origin = input("🏨 Enter your current location: ").lower()
+    destination = input("🗺️ Enter your destination: ").lower()
     mode = input("How will you be commuting? (🚶🏻 Walking,🚘 Driving,🚎 Bus,🚉 Train): ").lower()
     base_url = "https://maps.googleapis.com/maps/api/directions/json"
     params = {
@@ -104,7 +107,9 @@ def direction():
         if mode not in ("walking", "driving", "bus", "train"):  # Checks  if the user inputted the recognized mode
             print("You have entered an invalid mode of transportation")
         else:
-            print(f"It will take {duration} to get to {destination}")  # The duration is printed
+            print("\n")
+            print(weather_check(destination_city, destination_country))
+            print(f"\nEstimated duration: It will take {duration} to get to {destination}")  # The duration is printed
             direction = data['routes'][0]['legs'][0]['steps']  # Getting the html direction from Google API
             with open('user_directions.json', 'w') as json_file:
                 json.dump(direction, json_file, indent=2)  # writing the direction into a json file
@@ -115,7 +120,7 @@ def direction():
                     for i in range(0, len(direction)):
                         blank_direction.append(direction[i]['html_instructions'])  # Appending each html instruction
                         # to a blank list
-                    print("Below is your direction:")
+                    print("\nHere are the directions:")
                     for i in blank_direction:
                         soup = BeautifulSoup(i,
                                              'html.parser')  # Using BeautifulSoup class to clean the html instruction
@@ -125,9 +130,8 @@ def direction():
                     soup = BeautifulSoup(direction[0]['html_instructions'], 'html.parser')  # Using BeautifulSoup
                     # class to clean the single html instruction
                     print(
-                        f"Below is your direction: \n{' '.join(soup.stripped_strings)}")  # printing the cleaned html instruction whilst adding whitespace
-            else:
-                print("Safe Travels 🧳✈️")  # If the user doesn't need direction this is printed in console
+                        f"\nHere are the directions: \n{' '.join(soup.stripped_strings)}")  # printing the cleaned html
+                    # instruction whilst adding whitespace
     except KeyError as e:
         print("Invalid location")
         return None
@@ -135,6 +139,7 @@ def direction():
         print(
             f"An unexpected error occurred: {e}. Try providing location and destination with specific city and country")
         return None  # End of the try statement
+    return destination_country, destination_city
     
 def get_location_coordinates(place):
     """
