@@ -184,7 +184,7 @@ def log_coordinates(place, longitude,latitude):
         file.write(f"{place}  Longitude: {longitude}, Latitude: {latitude} \n")
 
 
-def get_places(location, search, user_rating, number_of_output):
+def get_nearby_places(location, search, user_rating, number_of_output):
     """
     Returns a specific type of place based on coordinates, search query, user rating, and number of results.
 
@@ -286,7 +286,7 @@ def discover_more_places(): #Aishat
     # Displaying weather information for the user's location
     print(weather_check(user_city, user_country))
     # Getting and displaying nearby places based on user's input
-    nearby_places = get_places(location, search, user_rating, number_of_output)
+    nearby_places = get_nearby_places(location, search, user_rating, number_of_output)
     return display_nearby_places(nearby_places)
 
 
@@ -375,7 +375,7 @@ def navigation_services():
                 # Converting user_rating to int if it's not "any"
                 if user_rating != "any":
                     user_rating = float(user_rating)
-                nearby_places = get_places(location, search, user_rating, number_of_output)
+                nearby_places = get_nearby_places(location, search, user_rating, number_of_output)
                 display_nearby_places(nearby_places)
             elif push_place_discovery_service == "no":
                 break
