@@ -49,4 +49,4 @@ def log_coordinates(place, longitude,latitude):
         # Write the place and its coordinates to the file
         file.write(f"{place}  Longitude: {longitude}, Latitude: {latitude} \n")
 
-get_location_coordinates('kampala, Uganda')
+get_location_coordinates('kenya, mombasa')
