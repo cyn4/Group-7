@@ -204,8 +204,6 @@ def get_nearby_places(location, search, user_rating, number_of_output):
             places_data = response.json()
             if user_rating == "any":
                 return places_data['results'][:number_of_output]
-        #     elif places_data['results'][0]['rating'] >= user_rating:
-        #         return places_data['results'][:number_of_output]
             else:
                 filtered_places = [
                     place for place in places_data['results'] if
