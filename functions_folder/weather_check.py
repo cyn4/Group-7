@@ -1,6 +1,6 @@
-def weather_check(user_city, user_country): #Tobi
+def weather_check(user_city, user_country): 
     """
-    Checks the weather by passing city and country.
+    Check the weather by passing city and country.
 
     Args:
     - user_city (str): City for weather check.
@@ -16,14 +16,14 @@ def weather_check(user_city, user_country): #Tobi
         'q': user_location,
         'unit': 'metrics',
         'appid': weather_api_key
-    }  # The parameters to be based to the get method
+    }  # The parameters to be based on the get method
     response = requests.get(url=endpoint, params=payload)
     data = response.json()
     try:  # The try statement ensures the code doesn't break
         conversion = round(
             data['main']['feels_like'] - 273.15)  # This covert the temperature to degree
-        if conversion >= 35:  # The 'if' block print a feedback based on the temparature of the user's location
-            return (f"The weather is: {conversion}°\n🌞 It is sunny in {user_city}, pack a sun screen 🍶 or pack a "
+        if conversion >= 35:  # The 'if' block prints feedback based on the temperature of the user's location
+            return (f"The weather is: {conversion}°\n🌞 It is sunny in {user_city}, pack a sunscreen 🍶 or pack a "
                     f"Umbrella"
                     f"☂️\n")
         elif conversion >= 20:
