@@ -32,7 +32,7 @@ import json
 from bs4 import BeautifulSoup 
 from dotenv import load_dotenv
 import os  
-
+from Title import places, navigation_art
 
 # load .env file
 load_dotenv()
