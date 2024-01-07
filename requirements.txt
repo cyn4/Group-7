@@ -1,0 +1,5 @@
+json==
+requests==2.31.0
+os==
+bs4==
+dotenv==
