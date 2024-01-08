@@ -58,7 +58,7 @@ ExploreWayz is a Python application designed to facilitate efficient trip planni
 
 ## Function Explanation
 There is webpage documentation for the functions used in developing this app console, which has been in the ExploWayz Documentation Zip file.
-    -**How to access the webpage HTML file**
+### How to access the webpage HTML file
        - Download the Zip file 
        - Extract the Zip file 
        - Open the documentation folder
