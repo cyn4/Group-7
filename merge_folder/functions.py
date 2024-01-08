@@ -1,7 +1,7 @@
 """
 This file contains all functions required for the application to run effectively on the main_code
 Functions: get_location_coordinates,log_coordinates, display_places, get_nearby_places, 
-get_user_input, weather_check, direction,clear_console
+get_user_input, weather_check, direction,clear_console etc
 
 import requests:
 -->Imports the entire requests library, providing functionalities for making HTTP requests to web servers or APIs.
@@ -204,8 +204,6 @@ def get_nearby_places(location, search, user_rating, number_of_output):
             places_data = response.json()
             if user_rating == "any":
                 return places_data['results'][:number_of_output]
-        #     elif places_data['results'][0]['rating'] >= user_rating:
-        #         return places_data['results'][:number_of_output]
             else:
                 filtered_places = [
                     place for place in places_data['results'] if
