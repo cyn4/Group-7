@@ -34,7 +34,7 @@ def direction():
             blank_direction = []
             is_direction = input(f"Do you want direction to {destination}?\nType Yes or No: ").lower()
             if is_direction == "yes":
-                if len(direction) > 1:  # Check the number of html instruction in the dictionary
+                if len(direction) > 0:  # Check the number of html instruction in the dictionary
                     for i in range(0, len(direction)):
                         blank_direction.append(direction[i]['html_instructions'])  # Appending each html instruction
                         # to a blank list
@@ -44,7 +44,7 @@ def direction():
                                              'html.parser')  # Using BeautifulSoup class to clean the html instruction
                         print(' '.join(
                             soup.stripped_strings))  # printing the cleaned html instruction whilst adding whitespace
-                elif len(direction) == 1:
+                elif len(direction) == 0:
                     soup = BeautifulSoup(direction[0]['html_instructions'], 'html.parser')  # Using BeautifulSoup
                     # class to clean the single html instruction
                     print(
