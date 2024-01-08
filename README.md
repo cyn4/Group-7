@@ -56,6 +56,16 @@ ExploreWayz is a Python application designed to facilitate efficient trip planni
 <img width="7472" alt="Flow charts_app" src="https://github.com/cyn4/Group-7/assets/131699315/6b8f5441-f2da-414d-b8b6-d82d40d52cba">
 
 
+## Function Explanation
+There is webpage documentation for the functions used in developing this app console, which has been in the ExploWayz Documentation Zip file.
+### How to access the webpage HTML file
+       - Download the Zip file 
+       - Extract the Zip file 
+       - Open the documentation folder
+       - Open build folder 
+       - Open index HTML file 
+
+
 ### Code Structure
 
 ![Code Structure Flow Chart](Images/codeStructure_Flowchart.png)
@@ -70,3 +80,43 @@ ExploreWayz is a Python application designed to facilitate efficient trip planni
 - Aishat
 - Zione
 
+# Individual Contribution
+
+## Oluwatobi 
+    - weather_check function
+    - direction function
+    - display_nearby_places function
+    - clear_console
+    - documentation
+  
+## Kafayat
+    - main.py file
+    - get_nearby_places function
+    - app_exit function
+
+## Cynthia
+     - get_location_coordinate function
+     - log_coordinate function
+     - merge folder
+     - Flow chart
+    
+## Aishat
+     - title.py file
+     - get_user_input function
+     - discover_place_servicve function
+     - discover_more_places function
+    
+## Zione
+     - push_Navigation_service function
+     - more_navigation_service function
+     - navigation_service function
+
+    
+## Group Contribution 
+     - Readme
+     - PowerPoint presentation
+     - .env file
+
+    
+  
+  
