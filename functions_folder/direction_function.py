@@ -34,7 +34,7 @@ def direction():
             blank_direction = []
             is_direction = input(f"Do you want direction to {destination}?\nType Yes or No: ").lower()
             if is_direction == "yes":
-                if len(direction) > 0:  # Check the number of html instruction in the dictionary
+                if len(direction) > 1:  # Check the number of html instruction in the dictionary
                     for i in range(0, len(direction)):
                         blank_direction.append(direction[i]['html_instructions'])  # Appending each html instruction
                         # to a blank list
