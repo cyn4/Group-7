@@ -1,7 +1,7 @@
 """
 This file contains all functions required for the application to run effectively on the main_code
 Functions: get_location_coordinates,log_coordinates, display_places, get_nearby_places, 
-get_user_input, weather_check, direction,clear_console
+get_user_input, weather_check, direction,clear_console etc
 
 import requests:
 -->Imports the entire requests library, providing functionalities for making HTTP requests to web servers or APIs.
