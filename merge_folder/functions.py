@@ -234,9 +234,9 @@ def get_user_input():
     user_rating = input("💬 What rating do you want?.\n (Type any if you want all ratings) : ").lower()  # Prompting for the user's rating preference
     number_of_output = int(input("How many of your search results do you want to see: "))  # Prompting for the number of results to display
 
-    # Converting user_rating to int if it's not "any"
+    # Converting user_rating to float if it's not "any"
     if user_rating != "any":
-        user_rating = int(user_rating)
+        user_rating = float(user_rating)
 
     return user_city, user_country, search, user_rating, number_of_output  # Returning multiple values as a tuple
 
@@ -370,7 +370,7 @@ def navigation_services():
                     input("How many of your search results do you want to see: "))  # Prompting for the number
                 # of results to display
 
-                # Converting user_rating to int if it's not "any"
+                # Converting user_rating to float if it's not "any"
                 if user_rating != "any":
                     user_rating = float(user_rating)
                 nearby_places = get_nearby_places(location, search, user_rating, number_of_output)
