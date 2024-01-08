@@ -80,33 +80,33 @@ There is webpage documentation for the functions used in developing this app con
 - Aishat
 - Zione
 
-## Individual Contribution
+# Individual Contribution
 
-#### Oluwatobi 
+## Oluwatobi 
     - weather_check function
     - direction function
     - display_nearby_places function
     - clear_console
     - documentation
   
-#### Kafayat
+## Kafayat
     - main.py file
     - get_nearby_places function
     - app_exit function
 
-#### Cynthia
+## Cynthia
      - get_location_coordinate function
      - log_coordinate function
      - merge folder
      - Flow chart
     
-#### Aishat
+## Aishat
      - title.py file
      - get_user_input function
      - discover_place_servicve function
      - discover_more_places function
     
-#### Zione
+## Zione
      - push_Navigation_service function
      - more_navigation_service function
      - navigation_service function
