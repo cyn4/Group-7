@@ -44,7 +44,7 @@ def direction():
                                              'html.parser')  # Using BeautifulSoup class to clean the html instruction
                         print(' '.join(
                             soup.stripped_strings))  # printing the cleaned html instruction whilst adding whitespace
-                elif len(direction) == 0:
+                elif len(direction) == 1:
                     soup = BeautifulSoup(direction[0]['html_instructions'], 'html.parser')  # Using BeautifulSoup
                     # class to clean the single html instruction
                     print(
