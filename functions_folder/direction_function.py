@@ -5,7 +5,7 @@ def direction():
     Returns:
     - None
     """
-    GOOGLE_MAPS_API_KEY = "AIzaSyCqXq0BqIAIojo2IGJKkivABWFNM0fUCYA"
+    GOOGLE_MAPS_API_KEY = ""
     destination_country = input("What country is the destination?: ").lower()
     destination_city = input("What city is the destination?: ").lower()
     origin = input("🏨 Enter your current location: ").lower()
