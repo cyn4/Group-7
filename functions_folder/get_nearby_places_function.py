@@ -6,7 +6,7 @@ import os
 load_dotenv()
 
 # Access an environment variable
-google_maps_api_key = os.getenv('google_maps_api_key')
+google_maps_api_key = os.getenv('GOOGLE_MAPS_API_KEY_PLACES ')
 
 def get_nearby_places(location, search, user_rating, number_of_output):
     """
